@@ -65,7 +65,7 @@ def execute_query(session, **kwargs):
     # Create the transaction and execute query.
     logger.warning('executing qujery')
     return session.transaction().execute(
-        f"INSERT INTO main (face_photo_id, orig_photo_id) VALUES ('{kwargs.get('face_photo_id')}','{kwargs.get('orig_photo_id')}');",
+        f"""PRAGMA TablePathPrefix("{YDB_DATABASE}") INSERT INTO main (face_photo_id, orig_photo_id) VALUES ('{kwargs.get('face_photo_id')}','{kwargs.get('orig_photo_id')}');""",
         commit_tx=True,
         settings=ydb.BaseRequestSettings().with_timeout(3).with_operation_timeout(2)
     )

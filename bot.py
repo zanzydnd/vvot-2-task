@@ -24,7 +24,7 @@ def get_driver():
 def get_face(chat_id):
     query = f"""
     PRAGMA TablePathPrefix("{os.getenv("DB_PATH")}");
-    SELECT * FROM photo WHERE name is NULL LIMIT 1;
+    SELECT * FROM main WHERE name is NULL LIMIT 1;
     """
     session = driver.table_client.session().create()
     result_sets = session.transaction().execute(query, commit_tx=True)
@@ -38,7 +38,7 @@ def get_face(chat_id):
 def add_name_to_last_photo(name):
     query = f"""
         PRAGMA TablePathPrefix("{os.getenv("DB_PATH")}");
-        SELECT * FROM photo WHERE name is NULL LIMIT 1;
+        SELECT * FROM main WHERE name is NULL LIMIT 1;
         """
     session = driver.table_client.session().create()
     result_sets = session.transaction().execute(query, commit_tx=True)
@@ -49,7 +49,7 @@ def add_name_to_last_photo(name):
         return
     query = f"""
     PRAGMA TablePathPrefix("{os.getenv("DB_PATH")}");
-    UPDATE photo SET name = '{name}' WHERE face_id = '{face_id}';
+    UPDATE main SET name = '{name}' WHERE face_id = '{face_id}';
     """
     session.transaction().execute(query, commit_tx=True)
     session.closing()
@@ -58,7 +58,7 @@ def add_name_to_last_photo(name):
 def find(chat_id, name):
     query = f"""
     PRAGMA TablePathPrefix("{os.getenv("DB_PATH")}");
-    SELECT DISTINCT original_id, name FROM photo WHERE name = '{name}';
+    SELECT DISTINCT original_id, name FROM main WHERE name = '{name}';
     """
     session = driver.table_client.session().create()
     result_sets = session.transaction().execute(query, commit_tx=True)
