@@ -1,0 +1,6 @@
+requests
+boto3
+pillow
+sanic
+ydb
+telegram
