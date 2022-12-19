@@ -37,6 +37,6 @@
 - vvot06-task-trigger (сервисный аккаунт **face-cut-invoker**)
 ### Функции
 - vvot06-face-detection (сервисный аккаунт **face-detection-function**, код из файла **photo.py**)
-- vvot06-boot (сервисный аккаунт **boot-function**, код из файла **functions/bot.py**)
+- vvot06-boot (сервисный аккаунт **boot-function**, код из файла **bot.py**)
 ### Контейнер
 - vvot06-face-cut (сервисный аккаунт **face-cut-container**, код из файла **face_cut.py**)
