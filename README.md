@@ -26,17 +26,17 @@
 - ydb.editor
 ## 2. Объекты
 ### Бакеты
-- itis-2022-2023-vvot01-photos
-- itis-2022-2023-vvot01-faces
+- itis-2022-2023-vvot06-photos
+- itis-2022-2023-vvot06-faces
 ### БД
-- vvot01-db-photo-face
+- vvot06-db-photo-face
 ### Очереди
-- vvot01-tasks
+- vvot06-tasks
 ### Триггеры
-- vvot01-photo-trigger (сервисный аакаунт **function-invoker**)
-- vvot01-task-trigger (сервисный аккаунт **face-cut-invoker**)
+- vvot06-photo-trigger (сервисный аакаунт **function-invoker**)
+- vvot06-task-trigger (сервисный аккаунт **face-cut-invoker**)
 ### Функции
-- vvot01-face-detection (сервисный аккаунт **face-detection-function**, код из файла **photo.py**)
-- vvot01-boot (сервисный аккаунт **boot-function**, код из файла **functions/bot.py**)
+- vvot06-face-detection (сервисный аккаунт **face-detection-function**, код из файла **photo.py**)
+- vvot06-boot (сервисный аккаунт **boot-function**, код из файла **functions/bot.py**)
 ### Контейнер
-- vvot01-face-cut (сервисный аккаунт **face-cut-container**, код из файла **face_cut.py**)
+- vvot06-face-cut (сервисный аккаунт **face-cut-container**, код из файла **face_cut.py**)
